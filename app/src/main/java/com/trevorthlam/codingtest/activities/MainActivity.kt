@@ -1,8 +1,8 @@
-package com.timewastergames.codingtest.activities
+package com.trevorthlam.codingtest.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.timewastergames.codingtest.R
+import com.trevorthlam.codingtest.R
 
 class MainActivity : AppCompatActivity() {
 
