@@ -57,7 +57,9 @@ class MainFragment : Fragment(), RepoDelegate {
         }
     }
 
-    fun onSearch(view: View) {
-        binding.editTextSearch.hint = "OK!"
+    override fun onClick(repo: RepoInfo) {
+        println("onClick: ${repo.name}")
+        val action = MainFragmentDirections.actionMainToDetail(repo.url)
+        findNavController().navigate(action)
     }
 }

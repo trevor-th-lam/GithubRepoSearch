@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: 'kotlinx-serialization'
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
