@@ -8,15 +8,19 @@ import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.trevorthlam.codingtest.R
-import com.trevorthlam.codingtest.RepoData
+import com.trevorthlam.codingtest.RepoInfo
+import com.trevorthlam.codingtest.databinding.FragmentMainBinding
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class MainFragment : Fragment() {
 
+    private lateinit var binding: FragmentMainBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
+        binding.handler = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,7 +33,7 @@ class MainFragment : Fragment() {
             val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, { response ->
 //                println("Response: /n %s".format(response.toString()))
 
-                val repository = Json { ignoreUnknownKeys = true }.decodeFromString<RepoData>(response.toString())
+                val repository = Json { ignoreUnknownKeys = true }.decodeFromString<RepoInfo>(response.toString())
                 println("Repository: %s".format(repository))
 
             }, {
@@ -38,6 +42,9 @@ class MainFragment : Fragment() {
 
             queue.add(jsonObjectRequest)
         }
+    }
 
+    fun onSearch(view: View) {
+        binding.editTextSearch.hint = "OK!"
     }
 }
