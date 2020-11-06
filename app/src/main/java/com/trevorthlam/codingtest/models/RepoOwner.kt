@@ -1,4 +1,4 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.codingtest.models
 
 import kotlinx.serialization.Serializable
 
