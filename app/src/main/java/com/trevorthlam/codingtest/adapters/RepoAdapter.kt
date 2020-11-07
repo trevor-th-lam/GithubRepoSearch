@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import com.trevorthlam.codingtest.R
 import com.trevorthlam.codingtest.databinding.CellRepoBinding
 import com.trevorthlam.codingtest.interfaces.RepoDelegate
-import com.trevorthlam.codingtest.models.RepoInfo
+import com.trevorthlam.codingtest.models.Repo
 import com.trevorthlam.codingtest.views.RepoCell
 
-class RepoAdapter(val delegate: RepoDelegate): ListAdapter<RepoInfo, RepoCell>(DiffCallback) {
+class RepoAdapter(val delegate: RepoDelegate): ListAdapter<Repo, RepoCell>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoCell {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -25,9 +25,9 @@ class RepoAdapter(val delegate: RepoDelegate): ListAdapter<RepoInfo, RepoCell>(D
     }
 
     companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<RepoInfo>() {
-            override fun areItemsTheSame(oldItem: RepoInfo, newItem: RepoInfo) = oldItem.id == newItem.id
-            override fun areContentsTheSame(oldItem: RepoInfo, newItem: RepoInfo) = oldItem == newItem
+        private val DiffCallback = object : DiffUtil.ItemCallback<Repo>() {
+            override fun areItemsTheSame(oldItem: Repo, newItem: Repo) = oldItem.id == newItem.id
+            override fun areContentsTheSame(oldItem: Repo, newItem: Repo) = oldItem == newItem
         }
     }
 }

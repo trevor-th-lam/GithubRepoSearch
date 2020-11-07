@@ -12,8 +12,8 @@ import com.trevorthlam.codingtest.adapters.RepoAdapter
 import com.trevorthlam.codingtest.databinding.FragmentMainBinding
 import com.trevorthlam.codingtest.interfaces.RepoDelegate
 import com.trevorthlam.codingtest.interfaces.RequestDelegate
-import com.trevorthlam.codingtest.models.RepoInfo
-import com.trevorthlam.codingtest.models.SearchResult
+import com.trevorthlam.codingtest.models.Repo
+import com.trevorthlam.codingtest.models.RepoSearchResult
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -50,7 +50,7 @@ class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
         }
     }
 
-    override fun onClick(repo: RepoInfo) {
+    override fun onClick(repo: Repo) {
 //        requestController.getRepoInfo(repo)
 
         val json = Json.encodeToString(repo)
@@ -58,8 +58,8 @@ class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
         findNavController().navigate(action)
     }
 
-    override fun didRetrieveSearchResult(searchResult: SearchResult) {
-        recyclerViewAdapter.submitList(searchResult.items)
+    override fun didRetrieveSearchResult(repoSearchResult: RepoSearchResult) {
+        recyclerViewAdapter.submitList(repoSearchResult.items)
     }
 
     override fun didRetrieveRepo(json: String) {

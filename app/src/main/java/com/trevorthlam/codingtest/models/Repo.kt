@@ -3,7 +3,7 @@ package com.trevorthlam.codingtest.models
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RepoInfo(
+data class Repo(
         val id: Int,
         val name: String,
         val owner: RepoOwner,

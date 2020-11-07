@@ -5,7 +5,7 @@
     <data>
         <variable
             name="repo"
-            type="com.trevorthlam.codingtest.models.RepoInfo" />
+            type="com.trevorthlam.codingtest.models.Repo" />
     </data>
 
     <LinearLayout
