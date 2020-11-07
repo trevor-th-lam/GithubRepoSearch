@@ -7,13 +7,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.trevorthlam.codingtest.RequestController
+import com.trevorthlam.codingtest.controllers.RequestController
 import com.trevorthlam.codingtest.adapters.RepoAdapter
 import com.trevorthlam.codingtest.databinding.FragmentMainBinding
 import com.trevorthlam.codingtest.interfaces.RepoDelegate
 import com.trevorthlam.codingtest.interfaces.RequestDelegate
 import com.trevorthlam.codingtest.models.RepoInfo
 import com.trevorthlam.codingtest.models.SearchResult
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
 
@@ -37,6 +39,7 @@ class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun onSearch(view: View) {
         if(binding.editTextSearch.text.isNotBlank()) {
             requestController.searchRepo(binding.editTextSearch.text.toString())
@@ -48,7 +51,11 @@ class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
     }
 
     override fun onClick(repo: RepoInfo) {
-        requestController.getRepoInfo(repo)
+//        requestController.getRepoInfo(repo)
+
+        val json = Json.encodeToString(repo)
+        val action = MainFragmentDirections.actionMainToDetail(json)
+        findNavController().navigate(action)
     }
 
     override fun didRetrieveSearchResult(searchResult: SearchResult) {
@@ -56,7 +63,8 @@ class MainFragment : Fragment(), RepoDelegate, RequestDelegate {
     }
 
     override fun didRetrieveRepo(json: String) {
-        val action = MainFragmentDirections.actionMainToDetail(json)
-        findNavController().navigate(action)
+        //  TODO: Placeholder for ReadMe
+//        val action = MainFragmentDirections.actionMainToDetail(json)
+//        findNavController().navigate(action)
     }
 }

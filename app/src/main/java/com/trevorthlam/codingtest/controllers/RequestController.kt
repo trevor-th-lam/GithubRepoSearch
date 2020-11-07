@@ -1,4 +1,4 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.codingtest.controllers
 
 import android.content.Context
 import com.android.volley.Request
@@ -10,11 +10,13 @@ import com.trevorthlam.codingtest.models.SearchResult
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-class RequestController(val context: Context, val delegate: RequestDelegate) {
+class RequestController(private val context: Context, private val delegate: RequestDelegate) {
+
+    private val resultPerPage = 30
 
     fun searchRepo(keyword: String) {
         val queue = Volley.newRequestQueue(context)
-        val url = "https://api.github.com/search/repositories?q=${keyword}&page=1&per_page=30"
+        val url = "https://api.github.com/search/repositories?q=${keyword}&page=1&per_page=${resultPerPage}"
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, { response ->
             val repository = Json { ignoreUnknownKeys = true }.decodeFromString<SearchResult>(response.toString())
@@ -28,6 +30,7 @@ class RequestController(val context: Context, val delegate: RequestDelegate) {
     }
 
 
+    //  TODO: Placeholder for ReadMe
     fun getRepoInfo(repoInfo: RepoInfo) {
         val queue = Volley.newRequestQueue(context)
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, repoInfo.url, null, { response ->
