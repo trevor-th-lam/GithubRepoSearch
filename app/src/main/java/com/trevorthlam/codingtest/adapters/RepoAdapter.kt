@@ -11,7 +11,7 @@ import com.trevorthlam.codingtest.interfaces.RepoDelegate
 import com.trevorthlam.codingtest.models.RepoInfo
 import com.trevorthlam.codingtest.views.RepoCell
 
-class RepoAdapter(val delegate: RepoDelegate): ListAdapter<RepoInfo, RepoCell>(DiffCallback()) {
+class RepoAdapter(val delegate: RepoDelegate): ListAdapter<RepoInfo, RepoCell>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoCell {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -24,14 +24,10 @@ class RepoAdapter(val delegate: RepoDelegate): ListAdapter<RepoInfo, RepoCell>(D
         holder.bind(getItem(position))
     }
 
-    class DiffCallback: DiffUtil.ItemCallback<RepoInfo>() {
-        override fun areItemsTheSame(oldItem: RepoInfo, newItem: RepoInfo): Boolean {
-            return oldItem == newItem
-        }
-
-        override fun areContentsTheSame(oldItem: RepoInfo, newItem: RepoInfo): Boolean {
-            return oldItem == newItem
+    companion object {
+        private val DiffCallback = object : DiffUtil.ItemCallback<RepoInfo>() {
+            override fun areItemsTheSame(oldItem: RepoInfo, newItem: RepoInfo) = oldItem.id == newItem.id
+            override fun areContentsTheSame(oldItem: RepoInfo, newItem: RepoInfo) = oldItem == newItem
         }
     }
-
 }
