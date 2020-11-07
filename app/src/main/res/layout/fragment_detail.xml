@@ -14,12 +14,35 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{repo.name}"
-            tools:text="Title"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            tools:text="Name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Owner: ` + repo.owner.login}"
+            tools:text="Open issues count" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Language: ` + repo.language}"
+            tools:text="Open issues count" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Open Issues: ` + Integer.toString(repo.open_issues_count)}"
+            tools:text="Open issues count" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Forks: ` + Integer.toString(repo.forks_count)}"
+            tools:text="Forks count" />
     </LinearLayout>
 
 </layout>
