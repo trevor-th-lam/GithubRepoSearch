@@ -1,11 +1,13 @@
 package com.trevorthlam.codingtest.models
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Repo(
-        val id: Int,
-        val name: String,
+        val id: Long,
+        @SerialName("full_name") val fullName: String,
+        val description: String?,
         val owner: RepoOwner,
         val url: String,
         val created_at: String,

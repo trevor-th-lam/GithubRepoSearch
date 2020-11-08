@@ -12,18 +12,24 @@
             type="com.trevorthlam.codingtest.interfaces.RepoDelegate" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> delegate.onClick(repo)}">
+        android:onClick="@{() -> delegate.onClick(repo)}"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/textView_cell_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@{repo.name}"
-            tools:text="Repo Title"
-            android:textSize="24sp" />
-    </FrameLayout>
+            android:text="@{repo.fullName}"
+            android:textSize="24sp"
+            tools:text="Full Name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{repo.description}"
+            tools:text="Description" />
+    </LinearLayout>
 </layout>
