@@ -1,7 +1,8 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.codingtest.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.trevorthlam.codingtest.services.GithubRepository
 
 class ViewModelFactory(private val repository: GithubRepository) : ViewModelProvider.Factory {
 

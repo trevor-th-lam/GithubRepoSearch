@@ -1,10 +1,10 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.codingtest.services
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.trevorthlam.codingtest.GithubPagingSource
 import com.trevorthlam.codingtest.models.Repo
-import com.trevorthlam.codingtest.services.GithubService
 import kotlinx.coroutines.flow.Flow
 
 class GithubRepository(private val service: GithubService) {

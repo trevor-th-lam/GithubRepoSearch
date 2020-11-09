@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.trevorthlam.codingtest.Injection
 import com.trevorthlam.codingtest.adapters.RepoAdapter
-import com.trevorthlam.codingtest.SearchRepoViewModel
+import com.trevorthlam.codingtest.viewModels.SearchRepoViewModel
 import com.trevorthlam.codingtest.databinding.FragmentSearchBinding
 import com.trevorthlam.codingtest.interfaces.RepoDelegate
 import com.trevorthlam.codingtest.models.Repo
@@ -45,7 +45,8 @@ class SearchFragment : Fragment(), RepoDelegate {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this, Injection.provideViewModelFactory()).get(SearchRepoViewModel::class.java)
+        viewModel = ViewModelProvider(this, Injection.provideViewModelFactory()).get(
+            SearchRepoViewModel::class.java)
 
         adapter = RepoAdapter(this)
         binding.recyclerView.adapter = adapter
