@@ -1,8 +1,8 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.githubRepoSearch
 
 import androidx.paging.PagingSource
-import com.trevorthlam.codingtest.models.Repo
-import com.trevorthlam.codingtest.services.GithubService
+import com.trevorthlam.githubRepoSearch.models.Repo
+import com.trevorthlam.githubRepoSearch.services.GithubService
 
 class GithubPagingSource(private val service: GithubService, private val query: String): PagingSource<Int, Repo>() {
 

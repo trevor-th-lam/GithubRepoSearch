@@ -1,6 +1,6 @@
-package com.trevorthlam.codingtest.services
+package com.trevorthlam.githubRepoSearch.services
 
-import com.trevorthlam.codingtest.models.RepoSearchResult
+import com.trevorthlam.githubRepoSearch.models.RepoSearchResult
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

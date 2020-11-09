@@ -1,9 +1,9 @@
-package com.trevorthlam.codingtest
+package com.trevorthlam.githubRepoSearch
 
 import androidx.lifecycle.ViewModelProvider
-import com.trevorthlam.codingtest.services.GithubRepository
-import com.trevorthlam.codingtest.services.GithubService
-import com.trevorthlam.codingtest.viewModels.ViewModelFactory
+import com.trevorthlam.githubRepoSearch.services.GithubRepository
+import com.trevorthlam.githubRepoSearch.services.GithubService
+import com.trevorthlam.githubRepoSearch.viewModels.ViewModelFactory
 
 object Injection {
 

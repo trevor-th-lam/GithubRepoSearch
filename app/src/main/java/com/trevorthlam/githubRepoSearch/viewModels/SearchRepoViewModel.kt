@@ -1,11 +1,11 @@
-package com.trevorthlam.codingtest.viewModels
+package com.trevorthlam.githubRepoSearch.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.trevorthlam.codingtest.services.GithubRepository
-import com.trevorthlam.codingtest.models.Repo
+import com.trevorthlam.githubRepoSearch.services.GithubRepository
+import com.trevorthlam.githubRepoSearch.models.Repo
 import kotlinx.coroutines.flow.Flow
 
 class SearchRepoViewModel (private val repository: GithubRepository) : ViewModel() {

@@ -1,4 +1,4 @@
-package com.trevorthlam.codingtest.fragments
+package com.trevorthlam.githubRepoSearch.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.trevorthlam.codingtest.databinding.FragmentDetailBinding
-import com.trevorthlam.codingtest.models.Repo
+import com.trevorthlam.githubRepoSearch.databinding.FragmentDetailBinding
+import com.trevorthlam.githubRepoSearch.models.Repo
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 

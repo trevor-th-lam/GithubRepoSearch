@@ -1,8 +1,8 @@
-package com.trevorthlam.codingtest.views
+package com.trevorthlam.githubRepoSearch.views
 
 import androidx.recyclerview.widget.RecyclerView
-import com.trevorthlam.codingtest.databinding.CellRepoBinding
-import com.trevorthlam.codingtest.models.Repo
+import com.trevorthlam.githubRepoSearch.databinding.CellRepoBinding
+import com.trevorthlam.githubRepoSearch.models.Repo
 
 class RepoCell(val binding: CellRepoBinding): RecyclerView.ViewHolder(binding.root) {
 

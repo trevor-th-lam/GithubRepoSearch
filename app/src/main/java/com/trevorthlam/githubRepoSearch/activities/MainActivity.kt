@@ -1,8 +1,8 @@
-package com.trevorthlam.codingtest.activities
+package com.trevorthlam.githubRepoSearch.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.trevorthlam.codingtest.R
+import com.trevorthlam.githubRepoSearch.R
 
 class MainActivity : AppCompatActivity() {
 

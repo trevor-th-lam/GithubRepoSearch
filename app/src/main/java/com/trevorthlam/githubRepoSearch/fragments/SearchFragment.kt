@@ -1,4 +1,4 @@
-package com.trevorthlam.codingtest.fragments
+package com.trevorthlam.githubRepoSearch.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,12 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
-import com.trevorthlam.codingtest.Injection
-import com.trevorthlam.codingtest.adapters.RepoAdapter
-import com.trevorthlam.codingtest.viewModels.SearchRepoViewModel
-import com.trevorthlam.codingtest.databinding.FragmentSearchBinding
-import com.trevorthlam.codingtest.interfaces.RepoDelegate
-import com.trevorthlam.codingtest.models.Repo
+import com.trevorthlam.githubRepoSearch.Injection
+import com.trevorthlam.githubRepoSearch.adapters.RepoAdapter
+import com.trevorthlam.githubRepoSearch.viewModels.SearchRepoViewModel
+import com.trevorthlam.githubRepoSearch.databinding.FragmentSearchBinding
+import com.trevorthlam.githubRepoSearch.interfaces.RepoDelegate
+import com.trevorthlam.githubRepoSearch.models.Repo
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
@@ -71,11 +71,10 @@ class SearchFragment : Fragment(), RepoDelegate {
     fun onSearch(view: View) {
         binding.editTextSearch.text.trim().let {
             if (it.isNotEmpty()) {
-//                requestController.searchRepo(binding.editTextSearch.text.toString())
                 search(it.toString())
             } else {
                 context?.let { context ->
-                    Toast.makeText(context, "Please input keyword", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Please enter a query", Toast.LENGTH_SHORT).show()
                 }
             }
         }

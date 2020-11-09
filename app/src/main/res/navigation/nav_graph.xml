@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.trevorthlam.codingtest.fragments.SearchFragment"
+        android:name="com.trevorthlam.githubRepoSearch.fragments.SearchFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_search">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.trevorthlam.codingtest.fragments.DetailFragment"
+        android:name="com.trevorthlam.githubRepoSearch.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <argument

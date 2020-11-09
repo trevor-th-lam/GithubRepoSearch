@@ -5,11 +5,11 @@
     <data>
         <variable
             name="repo"
-            type="com.trevorthlam.codingtest.models.Repo" />
+            type="com.trevorthlam.githubRepoSearch.models.Repo" />
 
         <variable
             name="delegate"
-            type="com.trevorthlam.codingtest.interfaces.RepoDelegate" />
+            type="com.trevorthlam.githubRepoSearch.interfaces.RepoDelegate" />
     </data>
 
     <LinearLayout

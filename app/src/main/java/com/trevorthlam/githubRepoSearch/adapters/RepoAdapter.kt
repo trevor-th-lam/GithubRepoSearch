@@ -1,19 +1,17 @@
-package com.trevorthlam.codingtest.adapters
+package com.trevorthlam.githubRepoSearch.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.trevorthlam.codingtest.R
-import com.trevorthlam.codingtest.databinding.CellRepoBinding
-import com.trevorthlam.codingtest.interfaces.RepoDelegate
-import com.trevorthlam.codingtest.models.Repo
-import com.trevorthlam.codingtest.views.RepoCell
+import com.trevorthlam.githubRepoSearch.R
+import com.trevorthlam.githubRepoSearch.databinding.CellRepoBinding
+import com.trevorthlam.githubRepoSearch.interfaces.RepoDelegate
+import com.trevorthlam.githubRepoSearch.models.Repo
+import com.trevorthlam.githubRepoSearch.views.RepoCell
 
-class RepoAdapter(private val delegate: RepoDelegate) : PagingDataAdapter<Repo, RepoCell>(
-    DiffCallback
-) {
+class RepoAdapter(private val delegate: RepoDelegate) : PagingDataAdapter<Repo, RepoCell>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoCell {
         val layoutInflater = LayoutInflater.from(parent.context)
