@@ -9,5 +9,4 @@ class RepoCell(val binding: CellRepoBinding): RecyclerView.ViewHolder(binding.ro
     fun bind(item: Repo) {
         binding.repo = item
     }
-
 }

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="handler"
-            type="com.trevorthlam.codingtest.fragments.MainFragment" />
+            type="com.trevorthlam.codingtest.fragments.SearchFragment" />
     </data>
 
     <LinearLayout

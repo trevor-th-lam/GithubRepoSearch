@@ -35,13 +35,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{`Open Issues: ` + Integer.toString(repo.open_issues_count)}"
+            android:text="@{`Open Issues: ` + Integer.toString(repo.openIssues)}"
             tools:text="Open issues" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{`Forks: ` + Integer.toString(repo.forks_count)}"
+            android:text="@{`Forks: ` + Integer.toString(repo.forks)}"
             tools:text="Forks" />
     </LinearLayout>
 

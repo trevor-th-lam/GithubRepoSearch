@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.trevorthlam.codingtest.fragments.MainFragment"
+        android:name="com.trevorthlam.codingtest.fragments.SearchFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_main_to_detail"
             app:destination="@id/detailFragment" />
