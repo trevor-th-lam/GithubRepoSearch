@@ -19,14 +19,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{repo.fullName}"
+            android:text="@{repo.name}"
             android:textSize="30sp"
             tools:text="Name" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{`Owner: ` + repo.owner.login}"
+            android:text="@{`Owner: ` + repo.owner.name}"
             tools:text="Owner" />
 
         <TextView

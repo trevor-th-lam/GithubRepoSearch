@@ -6,6 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Repo(
         val id: Long,
+        val name: String,
         @SerializedName("full_name") val fullName: String,
         val description: String?,
         val owner: RepoOwner,

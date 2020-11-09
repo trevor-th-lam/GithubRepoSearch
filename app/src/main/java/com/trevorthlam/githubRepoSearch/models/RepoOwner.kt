@@ -1,8 +1,9 @@
 package com.trevorthlam.githubRepoSearch.models
 
+import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class RepoOwner(
-        val login: String
+        @SerializedName("login")  val name: String
 )
