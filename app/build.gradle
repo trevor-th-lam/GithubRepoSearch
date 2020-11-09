@@ -12,7 +12,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.trevorthlam.codingtest"
+        applicationId "com.trevorthlam.githubRepoSearch"
         minSdkVersion 24
         targetSdkVersion 29
         versionCode 1

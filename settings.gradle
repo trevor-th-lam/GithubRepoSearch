@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Coding Test"
+rootProject.name = "GithubRepoSearch"
